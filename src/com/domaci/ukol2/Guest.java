@@ -5,7 +5,7 @@ public class Guest  {
     String nameFirst;
     String nameSecond;
     LocalDate dateBirth;
-    String nameFull;
+    // String nameFull;
     public Guest(String nameFirst, String nameSecond, LocalDate dateBirth) {
         this.nameFirst = nameFirst;
         this.nameSecond = nameSecond;
