@@ -15,12 +15,12 @@ public class Main {
 
         // END variables that I should retrieve from the database and not like this
 
-        for (i = numberGuests; i < numberGuests; i++) {
-            System.out.println(HotelGuest[i-1].getNameFull() + "   Datum narození: " + HotelGuest[i-1].getDateBirth());
+        for (i = 0; i < numberGuests; i++) {
+            System.out.println(HotelGuest[i].getNameFull() + "   Datum narození: " + HotelGuest[i].getDateBirth());
         }
 
-        System.out.println(HotelGuest[0].getNameFull() + "   Datum narození: " + HotelGuest[0].getDateBirth());
-        System.out.println(HotelGuest[1].getNameFull() + "   Datum narození: " + HotelGuest[1].getDateBirth());
+        //System.out.println(HotelGuest[0].getNameFull() + "   Datum narození: " + HotelGuest[0].getDateBirth());
+        //System.out.println(HotelGuest[1].getNameFull() + "   Datum narození: " + HotelGuest[1].getDateBirth());
 
     }
 }
