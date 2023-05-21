@@ -4,32 +4,32 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class Reservation {
-    private String rezervaceOsoba;
-    private LocalDate rezervovanoOd;
-    private LocalDate rezervovanoDo;
-    private int rezervovanyPokoj;
+    private String whoBooked;
+    private LocalDate reservedFrom;
+    private LocalDate bookedUntil;
+    private int numberBookedRoom;
 
-    public Reservation(String rezervaceOsoba) {}
-    public Reservation(int rezervovanyPokoj) {}
+    public Reservation(String whoBooked) {}
+    public Reservation(int numberBookedRoom) {}
 
-    public String getRezervaceOsoba() {return rezervaceOsoba;}
-    public void setRezervaceOsoba(String rezervaceOsoba) {this.rezervaceOsoba = rezervaceOsoba;}
-    public int getRezervovanyPokoj() {return rezervovanyPokoj;}
-    public void setRezervovanyPokoj(int rezervovanyPokoj) {this.rezervovanyPokoj = rezervovanyPokoj;}
-    public LocalDate getRezervovanoOd() {return rezervovanoOd;}
-    public void setRezervovanoOd(LocalDate rezervovanoOd) {this.rezervovanoOd = rezervovanoOd;}
-    public LocalDate getRezrvovanoDo() {return rezervovanoDo;}
-    public void setRezrvovanoDo(LocalDate rezrvovanoDo) {this.rezervovanoDo = rezrvovanoDo;}
+    public String getWhoBooked() {return whoBooked;}
+    public void setWhoBooked(String whoBooked) {this.whoBooked = whoBooked;}
+    public int getNumberBookedRoom() {return numberBookedRoom;}
+    public void setNumberBookedRoom(int numberBookedRoom) {this.numberBookedRoom = numberBookedRoom;}
+    public LocalDate getReservedFrom() {return reservedFrom;}
+    public void setReservedFrom(LocalDate reservedFrom) {this.reservedFrom = reservedFrom;}
+    public LocalDate getRezrvovanoDo() {return bookedUntil;}
+    public void setRezrvovanoDo(LocalDate rezrvovanoDo) {this.bookedUntil = rezrvovanoDo;}
 
-    public Reservation(String rezervaceOsoba, LocalDate rezervovanoOd, LocalDate rezrvovanoDo, int rezervovanyPokoj) {
-        this.rezervaceOsoba = rezervaceOsoba;
-        this.rezervovanoOd = rezervovanoOd;
-        this.rezervovanoDo = rezrvovanoDo;
-        this.rezervovanyPokoj = rezervovanyPokoj;
+    public Reservation(String whoBooked, LocalDate reservedFrom, LocalDate bookedUntil, int numberBookedRoom) {
+        this.whoBooked = whoBooked;
+        this.reservedFrom = reservedFrom;
+        this.bookedUntil = bookedUntil;
+        this.numberBookedRoom = numberBookedRoom;
     }
     public String getRozsahRezervace() {
-        return "od " + rezervovanoOd.format(DateTimeFormatter.ofPattern("d.M.yyyy"))
-        + " do " + rezervovanoDo.format(DateTimeFormatter.ofPattern("d.M.yyyy"));
+        return "od " + reservedFrom.format(DateTimeFormatter.ofPattern("d.M.yyyy"))
+        + " do " + bookedUntil.format(DateTimeFormatter.ofPattern("d.M.yyyy"));
     }
 
 }
