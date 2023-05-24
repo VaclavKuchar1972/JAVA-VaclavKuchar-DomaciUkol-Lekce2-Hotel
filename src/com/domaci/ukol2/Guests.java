@@ -13,7 +13,7 @@ public class Guests {
     // který Tě suploval, který to říkal také a začal psát třídu bez nich, tak mi řekl,
     // že tam musí být, jen když se v té třídě pracuje s proměnnými, takže jsem z toho zmatenej,
     // ale mě to na to co jsem chtěl fungovalo
-    public String getNameFirst() {return nameFirst;}
+
     public void setNameFirst(String nameFirst) {this.nameFirst = nameFirst;}
     public String getNameSecond() {return nameSecond;}
     public void setNameSecond(String nameSecond) {this.nameSecond = nameSecond;}
@@ -31,4 +31,6 @@ public class Guests {
     public String getNameFull() {return nameFirst + " " + nameSecond;}
     public String getDateBirth() {return dateBirth.format(DateTimeFormatter.ofPattern("d.M.yyyy"));}
     // KONEC
+
+    // public static String getNameFirst() {return nameFirst;}
 }
