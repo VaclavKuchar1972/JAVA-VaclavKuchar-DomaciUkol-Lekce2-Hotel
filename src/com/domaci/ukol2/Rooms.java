@@ -2,7 +2,7 @@ package com.domaci.ukol2;
 
 import java.math.BigDecimal;
 
-public class Room {
+public class Rooms {
     private int rooomNumber;
     private int numberBeds;
     private boolean theBalcony;
@@ -20,7 +20,7 @@ public class Room {
     public BigDecimal getRoomPrice() {return roomPrice;}
     public void setRoomPrice(BigDecimal roomPrice) {this.roomPrice = roomPrice;}
 
-    public Room(int rooomNumber, int numberBeds, boolean theBalcony, boolean seaView, int roomPrice) {
+    public Rooms(int rooomNumber, int numberBeds, boolean theBalcony, boolean seaView, int roomPrice) {
         this.rooomNumber = rooomNumber;
         this.numberBeds = numberBeds;
         this.theBalcony = theBalcony;

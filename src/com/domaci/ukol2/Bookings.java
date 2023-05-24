@@ -3,14 +3,14 @@ package com.domaci.ukol2;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class Reservation {
+public class Bookings {
     private String whoBooked;
     private LocalDate reservedFrom;
     private LocalDate bookedUntil;
     private int numberBookedRoom;
 
-    public Reservation(String whoBooked) {}
-    public Reservation(int numberBookedRoom) {}
+    public Bookings(String whoBooked) {}
+    public Bookings(int numberBookedRoom) {}
 
     public String getWhoBooked() {return whoBooked;}
     public void setWhoBooked(String whoBooked) {this.whoBooked = whoBooked;}
@@ -21,7 +21,7 @@ public class Reservation {
     public LocalDate getRezrvovanoDo() {return bookedUntil;}
     public void setRezrvovanoDo(LocalDate rezrvovanoDo) {this.bookedUntil = rezrvovanoDo;}
 
-    public Reservation(String whoBooked, LocalDate reservedFrom, LocalDate bookedUntil, int numberBookedRoom) {
+    public Bookings(String whoBooked, LocalDate reservedFrom, LocalDate bookedUntil, int numberBookedRoom) {
         this.whoBooked = whoBooked;
         this.reservedFrom = reservedFrom;
         this.bookedUntil = bookedUntil;

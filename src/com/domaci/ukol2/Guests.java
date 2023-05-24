@@ -1,16 +1,9 @@
 package com.domaci.ukol2;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class Guest  {
+public class Guests {
     private String nameFirst;
     private String nameSecond;
     private LocalDate dateBirth;
@@ -30,7 +23,7 @@ public class Guest  {
 
     // TOTO mi stačilo na to, aby to dělalo to, co jsem chtěl, Gettry a Settry výše jsem tam přidal
     // jen proto, že již jsem dvakrát slyšel, že tam bejt musej. ALe nevim.
-    public Guest(String nameFirst, String nameSecond, LocalDate dateBirth) {
+    public Guests(String nameFirst, String nameSecond, LocalDate dateBirth) {
         this.nameFirst = nameFirst;
         this.nameSecond = nameSecond;
         this.dateBirth = dateBirth;
