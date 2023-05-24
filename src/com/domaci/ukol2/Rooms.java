@@ -27,6 +27,9 @@ public class Rooms {
         this.seaView = seaView;
         this.roomPrice = BigDecimal.valueOf(roomPrice);
     }
+
+    // Tady vím, že žluťásky lze zjednodušit sintaxí, zatím si to nechám takto, až se trochu rozprogramuji,
+    // odstraním je zjednodušeným zápisem, zatím řeším zcela jiné a DŮLEŽIŤĚJŠÍ problémy... :DD
     public String getTheBalconyText() {if (theBalcony == true){return "ANO";} else {return "NE";}}
     public String getSeaViewText() {if (seaView == true){return "ANO";} else {return "NE";}}
 }

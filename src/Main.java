@@ -9,12 +9,13 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-
         // ZAČÁTEK načtení dat, který by se podle mě měli načítat z nějaký databáze
         String hotel1Name = "MODRÁ HVĚZDA";
-        // Data HOSTÉ
+
         // Guests HotelGuest = new Guests("Adéla", "Malíková", LocalDate.of(1993, 3, 13));
         // VZNÝST DOTAZ na Konzultacích: Jak to, že to funguje i bez řádku výše v poznámce nebo tak něco - ZASE nechápu!? :-(
+
+        // Data HOSTÉ
         List<Guests> listGuests = new ArrayList<>();
         listGuests.add(new Guests("Adéla", "Malíková", LocalDate.of(1993, 3, 13)));
         listGuests.add(new Guests("Jan", "Dvořáček", LocalDate.of(1995, 5, 5)));
@@ -27,17 +28,15 @@ public class Main {
         // Konec Dat POKOJ
         // Data REZERVACE
         List<Bookings> listBookings = new ArrayList<>();
-
-        // !!!!! Tady se mi to ABSOLUTNĚ NELÍBÍ - TUPĚ zapisuji přímé hodnoty, ale chtěl bych tam zapsat
-        // místo "Adéla Malíková" hodnoty z "listGuests" na řádku 19 kódu resp. jen jméno a příjmení,
-        // tedy pro mě ekvivalent "guests.getNameFull()", ALE té hodnoty, která se nalézá právě na řádku 19 kódu,
-        // toto samozřejmě platí pro obě hodnoty "whoBooked", které nyní vkládám prostřednictvím metody LIST.ADD pro ty rezervace,
-        // tady fakt potřebuji poradit RYCHLE, jinak ten úkol neodevzám nikdy :DD v takové podobě, jak bych si představoval, :-(
-        // přestože to funguje... ...zítra je další lekce a já si připadám jak programátorská nula. :DD ...jsem v brutálním skluzu.
-        listBookings.add(new Bookings("Adéla Malíková", LocalDate.of(2021, 7, 19),
+        listBookings.add(new Bookings(listGuests.get(0).getNameFull(), LocalDate.of(2021, 7, 19),
                 LocalDate.of(2021, 7, 26), 1));
-        listBookings.add(new Bookings("Adéla Malíková a Jan Dvořáček", LocalDate.of(2021, 9, 1),
+
+        // Tady mám problém s tím přidaným " a ", to musím do budoucna nějak automatizovat - soukromý problém,
+        // není třeba reagovat, Martine. :-) ...navíc, co kdyby někdo měl 3 a více jmen, to se musí vyřešit. :-)
+        listBookings.add(new Bookings(listGuests.get(0).getNameFull() + " a " + listGuests.get(1).getNameFull(),
+                LocalDate.of(2021, 9, 1),
                 LocalDate.of(2021, 9, 14), 3));
+        // Konec Dat REZERVACE
         // KONEC načtení dat, který by se podle mě měli načítat z nějaký databáze
 
         // ZAČÁTEK výstupu
