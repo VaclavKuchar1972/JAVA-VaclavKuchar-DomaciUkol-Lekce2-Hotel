@@ -122,7 +122,13 @@ public class Main {
         BookingManager bookingManager = new BookingManager();
         bookingManager.addAll(bookingsList);
 
-        System.out.println(BookingManager.size());
+        // TADY JSEM MOC NEZVÁŽIL - KONZULTACE!!!!!!
+
+        System.out.println("");
+        System.out.println("STATISTIKA hotelu " + hotel1Name + " ke dni "
+                + LocalDate.now().format(DateTimeFormatter.ofPattern("d.M.yyyy")) + ":");
+        System.out.println("  Celkový počet rezervací: " + bookingManager.bookingsList.size());
+        // System.out.println("  Celkový počet rezervací: " + bookingManager.bookingsList.size());
 
     }
 

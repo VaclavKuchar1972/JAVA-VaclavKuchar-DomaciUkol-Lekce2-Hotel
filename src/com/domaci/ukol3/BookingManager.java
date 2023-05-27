@@ -9,7 +9,7 @@ import java.util.List;
 
 public class BookingManager {
 
-    private static final List<Bookings> bookingsList = new ArrayList<>();
+    public static final List<Bookings> bookingsList = new ArrayList<>();
 
     public void addAll(List<Bookings> bookingsList) {this.bookingsList.addAll(bookingsList);}
 

@@ -41,4 +41,7 @@ public class Bookings {
     }
     public String getWorkStay() {if (workStay == true){return "PRACOVNÍ";} else {return "REKREAČNÍ";}}
     public String getCompanyBooking() {if (companyBooking == true){return "FIREMNÍ";} else {return "SOUKROMÁ";}}
+
+
+
 }
