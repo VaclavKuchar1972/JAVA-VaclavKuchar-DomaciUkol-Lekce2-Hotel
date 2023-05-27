@@ -56,9 +56,9 @@ public class Main {
                 LocalDate.of(2021, 9, 14), 3, false, false));
         bookingsList.add(new Bookings(guestsList.get(2).getNameFull(), LocalDate.of(2023, 6, 1),
                 LocalDate.of(2023, 6, 7), 3, true, false));
-        for (i = 1; i < daysInMonth; i++) {
-            bookingsList.add(new Bookings(agenciesList.get(0).getCompanyName(), LocalDate.of(2023, 6, 1),
-                    LocalDate.of(2023, 6, 7), 2, false, true));
+        for (i = 0; i < daysInMonth-1; i++) {
+            bookingsList.add(new Bookings(agenciesList.get(0).getCompanyName(), LocalDate.of(2023, 6, i+1),
+                    LocalDate.of(2023, 6, i+2), 2, false, true));
         }
 
 
