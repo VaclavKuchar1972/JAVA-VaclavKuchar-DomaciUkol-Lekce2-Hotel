@@ -1,4 +1,4 @@
-package com.domaci.ukol2;
+package com.domaci.ukol3;
 
 import java.math.BigDecimal;
 
