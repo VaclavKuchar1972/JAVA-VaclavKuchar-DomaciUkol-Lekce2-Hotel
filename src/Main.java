@@ -19,6 +19,8 @@ public class Main {
         daysInMonth = yearMonthObject.lengthOfMonth();
         // KONEC Pomocných proměnných
 
+        int guestCount = 0;
+
         // ZAČÁTEK načtení dat, který by se podle mě měli načítat z nějaký databáze
         String hotel1Name = "MODRÁ HVĚZDA";
 
@@ -83,37 +85,37 @@ public class Main {
         System.out.println("");
         System.out.println("SEZNAM POKOJŮ hotelu " + hotel1Name + ":");
         for (Rooms rooms : roomsList) {
-            System.out.println("      Pokoj číslo " + rooms.getRooomNumber());
-            System.out.println("         Počet lůžek: " + rooms.getNumberBeds());
-            System.out.println("              Balkon: " + rooms.getTheBalconyText());
-            System.out.println("      Výhled na moře: " + rooms.getSeaViewText());
-            System.out.println("   Cena za jednu noc: " + rooms.getRoomPrice() + ",- Kč");
+            System.out.println("         Pokoj číslo " + rooms.getRooomNumber());
+            System.out.println("            Počet lůžek: " + rooms.getNumberBeds());
+            System.out.println("                 Balkon: " + rooms.getTheBalconyText());
+            System.out.println("         Výhled na moře: " + rooms.getSeaViewText());
+            System.out.println("      Cena za jednu noc: " + rooms.getRoomPrice() + ",- Kč");
         }
         System.out.println("");
         System.out.println("SEZNAM SOUKROMÝCH HOSTŮ hotelu " + hotel1Name + ":");
         for (Guests guests : guestsList) {
             System.out.println("   " + guests.getNameFull());
-            System.out.println("      Datum narození: " + guests.getDateBirth());
+            System.out.println("         Datum narození: " + guests.getDateBirth());
         }
         System.out.println("");
         System.out.println("SEZNAM FIREMNÍCH KLIENTŮ hotelu " + hotel1Name + ":");
         for (TravelAgencies travelAgencies : agenciesList) {
             System.out.println("   " + travelAgencies.getCompanyName());
-            System.out.println("                 IČO: " + travelAgencies.getICO());
+            System.out.println("                    IČO: " + travelAgencies.getICO());
         }
         System.out.println("");
         System.out.println("SEZNAM REZERVACÍ hotelu " + hotel1Name + " ke dni "
                 + LocalDate.now().format(DateTimeFormatter.ofPattern("d.M.yyyy")) + ":");
         for (Bookings bookings : bookingsList) {
             if (bookings.isCompanyBooking() == false) {
-                System.out.println("       Jméno hosta/ů: " + bookings.getWhoBooked());
+                System.out.println("          Jméno hosta/ů: " + bookings.getWhoBooked());
             } else {
-                System.out.println("         Jméno firmy: " + bookings.getWhoBooked());
+                System.out.println("            Jméno firmy: " + bookings.getWhoBooked());
             }
-            System.out.println("       Typ rezervace: " + bookings.getCompanyBooking());
-            System.out.println("          Typ pobytu: " + bookings.getWorkStay());
-            System.out.println("    Rozsah rezervace: " + bookings.getRozsahRezervace());
-            System.out.println("  Rezervace na pokoj: " + "č." + bookings.getNumberBookedRoom());
+            System.out.println("          Typ rezervace: " + bookings.getCompanyBooking());
+            System.out.println("             Typ pobytu: " + bookings.getWorkStay());
+            System.out.println("       Rozsah rezervace: " + bookings.getRozsahRezervace());
+            System.out.println("     Rezervace na pokoj: " + "č." + bookings.getNumberBookedRoom());
 
         }
         // KONEC výstupu
@@ -122,13 +124,22 @@ public class Main {
         BookingManager bookingManager = new BookingManager();
         bookingManager.addAll(bookingsList);
 
+
+
+
+
         // TADY JSEM MOC NEZVÁŽIL - KONZULTACE!!!!!!
 
         System.out.println("");
         System.out.println("STATISTIKA hotelu " + hotel1Name + " ke dni "
                 + LocalDate.now().format(DateTimeFormatter.ofPattern("d.M.yyyy")) + ":");
-        System.out.println("  Celkový počet rezervací: " + bookingManager.bookingsList.size());
+        System.out.println("Celkový počet rezervací: " + bookingManager.bookingsList.size());
         // System.out.println("  Celkový počet rezervací: " + bookingManager.bookingsList.size());
+
+
+
+
+
 
     }
 
