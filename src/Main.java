@@ -99,17 +99,13 @@ public class Main {
         for (Bookings bookings : bookingsList) {
             if (bookings.isCompanyBooking() == false) {
                 System.out.println("       Jméno hosta/ů: " + bookings.getWhoBooked());
-                System.out.println("       Typ rezervace: " + bookings.getCompanyBooking());
-                System.out.println("          Typ pobytu: " + bookings.getWorkStay());
-                System.out.println("    Rozsah rezervace: " + bookings.getRozsahRezervace());
-                System.out.println("  Rezervace na pokoj: " + "č." + bookings.getNumberBookedRoom());
             } else {
                 System.out.println("         Jméno firmy: " + bookings.getWhoBooked());
-                System.out.println("       Typ rezervace: " + bookings.getCompanyBooking());
-                System.out.println("          Typ pobytu: " + bookings.getWorkStay());
-                System.out.println("    Rozsah rezervace: " + bookings.getRozsahRezervace());
-                System.out.println("  Rezervace na pokoj: " + "č." + bookings.getNumberBookedRoom());
             }
+            System.out.println("       Typ rezervace: " + bookings.getCompanyBooking());
+            System.out.println("          Typ pobytu: " + bookings.getWorkStay());
+            System.out.println("    Rozsah rezervace: " + bookings.getRozsahRezervace());
+            System.out.println("  Rezervace na pokoj: " + "č." + bookings.getNumberBookedRoom());
 
         }
         // KONEC výstupu
