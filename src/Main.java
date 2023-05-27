@@ -2,21 +2,37 @@ import com.domaci.ukol3.*;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.YearMonth;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        // ZAČÁTEK Pomocných proměnných
+        int i = 0;
+
+        int daysInMonth;
+        int year = 2023;
+        int month = 6;
+        YearMonth yearMonthObject = YearMonth.of(year, month);
+        daysInMonth = yearMonthObject.lengthOfMonth();
+        // KONEC Pomocných proměnných
+
         // ZAČÁTEK načtení dat, který by se podle mě měli načítat z nějaký databáze
         String hotel1Name = "MODRÁ HVĚZDA";
 
         // Guests HotelGuest = new Guests("Adéla", "Malíková", LocalDate.of(1993, 3, 13));
         // VZNÝST DOTAZ na Konzultacích: Jak to, že to funguje i bez řádku výše v poznámce nebo tak něco - ZASE nechápu!? :-(
         // Data POKOJ
+
+        // Tady NEbudu plnit to zadání Vložení rezervace do seznamu: public void add(Booking newBooking).
+        // Získání seznamu rezervací: public List<Booking> getBookings().
+        // to musím dořešit na konzultacích!!!
+
         List<Rooms> roomsList = new ArrayList<>();
-        roomsList.add(new Rooms(1,1,true,true, 1000));
-        roomsList.add(new Rooms(2,1,true,true, 1000));
-        roomsList.add(new Rooms(3,3,false,true, 2400));
+        roomsList.add(new Rooms(1, 1, true, true, 1000));
+        roomsList.add(new Rooms(2, 1, true, true, 1000));
+        roomsList.add(new Rooms(3, 3, false, true, 2400));
         // Konec Dat POKOJ
         // Data HOSTÉ
         List<Guests> guestsList = new ArrayList<>();
@@ -27,19 +43,24 @@ public class Main {
         // Konec Dat HOSTÉ
         // Data FIREMNÍCH KLIENTŮ
         List<TravelAgencies> agenciesList = new ArrayList<>();
-        agenciesList.add(new TravelAgencies("ABC Relax",26702924));
+        agenciesList.add(new TravelAgencies("ABC Relax", 26702924));
         // Konec Dat FIREMNÍCH KLIENTŮ
-
         // Data REZERVACE
-
         List<Bookings> bookingsList = new ArrayList<>();
         bookingsList.add(new Bookings(guestsList.get(0).getNameFull(), LocalDate.of(2021, 7, 19),
-                LocalDate.of(2021, 7, 26), 1, true));
+                LocalDate.of(2021, 7, 26), 1, true, false));
         // Tady mám problém s tím přidaným " a ", to musím do budoucna nějatruek automatizovat - soukromý problém,
         // není třeba reagovat, Martine. :-) ...navíc, co kdyby někdo měl 3 a více jmen, to se musí vyřešit. :-)
         bookingsList.add(new Bookings(guestsList.get(0).getNameFull() + " a " + guestsList.get(1).getNameFull(),
                 LocalDate.of(2021, 9, 1),
-                LocalDate.of(2021, 9, 14), 3, false));
+                LocalDate.of(2021, 9, 14), 3, false, false));
+        bookingsList.add(new Bookings(guestsList.get(2).getNameFull(), LocalDate.of(2023, 6, 1),
+                LocalDate.of(2023, 6, 7), 3, true, false));
+        for (i = 1; i < daysInMonth; i++) {
+            bookingsList.add(new Bookings(agenciesList.get(0).getCompanyName(), LocalDate.of(2023, 6, 1),
+                    LocalDate.of(2023, 6, 7), 2, false, true));
+        }
+
 
         // Konec Dat REZERVACE
         // KONEC načtení dat, který by se podle mě měli načítat z nějaký databáze
@@ -68,11 +89,22 @@ public class Main {
         }
         System.out.println("");
         System.out.println("SEZNAM REZERVACÍ hotelu " + hotel1Name + " ke dni "
-                + LocalDate.now().format(DateTimeFormatter.ofPattern("d.M.yyyy")) +":");
+                + LocalDate.now().format(DateTimeFormatter.ofPattern("d.M.yyyy")) + ":");
         for (Bookings bookings : bookingsList) {
+            if (bookings.isCompanyBooking() == false) {
                 System.out.println("       Jméno hosta/ů: " + bookings.getWhoBooked());
+                System.out.println("       Typ rezervace: " + bookings.getCompanyBooking());
+                System.out.println("          Typ pobytu: " + bookings.getWorkStay());
                 System.out.println("    Rozsah rezervace: " + bookings.getRozsahRezervace());
                 System.out.println("  Rezervace na pokoj: " + "č." + bookings.getNumberBookedRoom());
+            } else {
+                System.out.println("         Jméno firmy: " + bookings.getWhoBooked());
+                System.out.println("       Typ rezervace: " + bookings.getCompanyBooking());
+                System.out.println("          Typ pobytu: " + bookings.getWorkStay());
+                System.out.println("    Rozsah rezervace: " + bookings.getRozsahRezervace());
+                System.out.println("  Rezervace na pokoj: " + "č." + bookings.getNumberBookedRoom());
+            }
+
         }
         // KONEC výstupu
 
@@ -82,8 +114,8 @@ public class Main {
 
         System.out.println(BookingManager.size());
 
-
     }
+
 }
 
 
