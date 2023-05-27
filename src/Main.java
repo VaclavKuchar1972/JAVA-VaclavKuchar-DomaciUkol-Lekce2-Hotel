@@ -60,7 +60,8 @@ public class Main {
             bookingsList.add(new Bookings(agenciesList.get(0).getCompanyName(), LocalDate.of(2023, 6, i+1),
                     LocalDate.of(2023, 6, i+2), 2, false, true));
         }
-
+        bookingsList.add(new Bookings(agenciesList.get(0).getCompanyName(), LocalDate.of(2023, 6, 30),
+                LocalDate.of(2023, 7, 1), 2, false, true));
 
         // Konec Dat REZERVACE
         // KONEC načtení dat, který by se podle mě měli načítat z nějaký databáze
