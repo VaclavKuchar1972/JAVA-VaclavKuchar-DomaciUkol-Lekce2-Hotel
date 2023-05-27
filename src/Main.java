@@ -9,7 +9,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         // ZAČÁTEK Pomocných proměnných
-        int i = 0;
+        int i = 0; int j = 0;
 
         int daysInMonth;
         int year = 2023;
@@ -65,6 +65,11 @@ public class Main {
         for (i = 0; i < 7; i++) {
             bookingsList.add(new Bookings(guestsList.get(3).getNameFull(), LocalDate.of(2023, i+6, 1),
                     LocalDate.of(2023, i+6, 5), 1, true, false));
+        }
+        for (i = 0; i < 4; i++) {
+            j = j * i;
+            bookingsList.add(new Bookings(agenciesList.get(0).getCompanyName(), LocalDate.of(2023, i+6, 1),
+                    LocalDate.of(2023, i+6, 5), 2, false, true));
         }
 
 
