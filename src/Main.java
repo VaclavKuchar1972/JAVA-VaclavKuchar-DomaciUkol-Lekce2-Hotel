@@ -62,14 +62,9 @@ public class Main {
         }
         bookingsList.add(new Bookings(agenciesList.get(0).getCompanyName(), LocalDate.of(2023, 6, 30),
                 LocalDate.of(2023, 7, 1), 2, false, true));
-
-
         for (i = 0; i < 7; i++) {
-
-            bookingsList.add(new Bookings(guestsList.get(3).getNameFull(), LocalDate.of(2023, 6, i+1),
-                    LocalDate.of(2023, 6, i+2), 1, true, false));
-
-
+            bookingsList.add(new Bookings(guestsList.get(3).getNameFull(), LocalDate.of(2023, i+6, 1),
+                    LocalDate.of(2023, i+6, 5), 1, true, false));
         }
 
 
