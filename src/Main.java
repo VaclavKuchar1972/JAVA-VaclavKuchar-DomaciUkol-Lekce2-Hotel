@@ -67,9 +67,9 @@ public class Main {
                     LocalDate.of(2023, i+6, 5), 1, true, false));
         }
         for (i = 0; i < 4; i++) {
-            j = j * i;
-            bookingsList.add(new Bookings(agenciesList.get(0).getCompanyName(), LocalDate.of(2023, i+6, 1),
-                    LocalDate.of(2023, i+6, 5), 2, false, true));
+            j = (i + 4);
+            bookingsList.add(new Bookings(agenciesList.get(0).getCompanyName(), LocalDate.of(2023, 8, 1+j),
+                    LocalDate.of(2023, 8, j), 2, false, true));
         }
 
 
