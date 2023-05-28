@@ -48,6 +48,8 @@ public class Main {
         agenciesList.add(new TravelAgencies("ABC Relax", 26702924));
         // Konec Dat FIREMNÍCH KLIENTŮ
         // Data REZERVACE
+
+
         List<Bookings> bookingsList = new ArrayList<>();
         bookingsList.add(new Bookings(guestsList.get(0).getNameFull(), LocalDate.of(2021, 7, 19),
                 LocalDate.of(2021, 7, 26), 1, true, false));
@@ -115,6 +117,7 @@ public class Main {
             System.out.println("          Typ rezervace: " + bookings.getCompanyBooking());
             System.out.println("             Typ pobytu: " + bookings.getWorkStay());
             System.out.println("       Rozsah rezervace: " + bookings.getBookingRange());
+            //System.out.println("             Počet nocí: " + bookings.getLengthStay());
             System.out.println("     Rezervace na pokoj: " + "č." + bookings.getNumberBookedRoom());
 
         }

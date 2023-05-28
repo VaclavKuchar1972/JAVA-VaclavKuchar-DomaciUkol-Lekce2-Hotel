@@ -6,12 +6,11 @@ import java.time.temporal.ChronoUnit;
 
 public class Bookings {
     private String whoBooked;
-    private LocalDate bookedFrom;
-    private LocalDate bookedUntil;
+    private static LocalDate bookedFrom;
+    private static LocalDate bookedUntil;
     private int numberBookedRoom;
     private boolean workStay;
     private boolean companyBooking;
-    private int lengthStay;
 
     //public Bookings(String whoBooked) {}
     //public Bookings(int numberBookedRoom) {}
@@ -29,27 +28,18 @@ public class Bookings {
     public boolean isCompanyBooking() {return companyBooking;}
     public void setCompanyBooking(boolean companyBooking) {this.companyBooking = companyBooking;}
 
-
-
-    public int getLengthStay() {
-        return (int) ChronoUnit.DAYS.between(bookedFrom, bookedUntil);
-    }
-
-    public void setLengthStay(int lengthStay) {
-        this.lengthStay = lengthStay;
-    }
-
-
     public Bookings(String whoBooked, LocalDate bookedFrom, LocalDate bookedUntil, int numberBookedRoom,
-                    boolean workStay, boolean companyBooking) {
+                    boolean workStay, boolean companyBooking)
+                    //int lengthStay)
+    {
         this.whoBooked = whoBooked;
         this.bookedFrom = bookedFrom;
         this.bookedUntil = bookedUntil;
         this.numberBookedRoom = numberBookedRoom;
         this.workStay = workStay;
         this.companyBooking = companyBooking;
-        this.lengthStay = lengthStay;
     }
+
     public String getBookingRange() {
         return "od " + bookedFrom.format(DateTimeFormatter.ofPattern("d.M.yyyy"))
         + " do " + bookedUntil.format(DateTimeFormatter.ofPattern("d.M.yyyy"));

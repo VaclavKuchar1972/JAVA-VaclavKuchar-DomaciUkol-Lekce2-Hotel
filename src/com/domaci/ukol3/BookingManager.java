@@ -5,6 +5,7 @@ import com.domaci.ukol3.Guests;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +17,7 @@ public class BookingManager {
 
     private int numberBookings;
     private BigDecimal orderPrice;
-    //private int lengthStay;
+    private int lengthStay;
 
     public int getNumberBookings() {return size();}
     public void setNumberBookings(int numberBookings) {this.numberBookings = numberBookings;}
@@ -24,22 +25,22 @@ public class BookingManager {
 
     public BigDecimal getOrderPrice() {
 
+return orderPrice;}
 
 
-
-
-        return orderPrice;}
-
-
+    //public static int getLengthStay() {
+    //    return (int) ChronoUnit.DAYS.between(bookedFrom, bookedUntil);
+    //}
+    //public void addAllLengtStay(List<Bookings> bookingsList) {this.bookingsList.add(lengthStay);}
 
     public void setOrderPrice(BigDecimal orderPrice) {this.orderPrice = orderPrice;}
-    //public int getLengthStay() {return lengthStay;}
-    //public void setLengthStay(int lengthStay) {this.lengthStay = lengthStay;}
+    //public int getLengthStay() {return (int) ChronoUnit.DAYS.between(bookingsList.,Bookings.bookedUntil());;}
+    public void setLengthStay(int lengthStay) {this.lengthStay = lengthStay;}
 
     public BookingManager(int numberBookings, BigDecimal orderPrice, int lengthStay) {
         this.numberBookings = numberBookings;
         this.orderPrice = orderPrice;
-    //    this.lengthStay = lengthStay;
+        this.lengthStay = lengthStay;
     }
 
 
