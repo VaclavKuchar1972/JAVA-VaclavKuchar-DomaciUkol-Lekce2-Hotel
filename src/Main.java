@@ -3,6 +3,7 @@ import com.domaci.ukol3.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.YearMonth;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -108,6 +109,7 @@ public class Main {
         System.out.println("");
         System.out.println("SEZNAM REZERVACÍ hotelu " + hotel1Name + " ke dni "
                 + LocalDate.now().format(DateTimeFormatter.ofPattern("d.M.yyyy")) + ":");
+        i=0;
         for (Bookings bookings : bookingsList) {
             if (bookings.isCompanyBooking() == false) {
                 System.out.println("          Jméno hosta/ů: " + bookings.getWhoBooked());
@@ -117,9 +119,15 @@ public class Main {
             System.out.println("          Typ rezervace: " + bookings.getCompanyBooking());
             System.out.println("             Typ pobytu: " + bookings.getWorkStay());
             System.out.println("       Rozsah rezervace: " + bookings.getBookingRange());
-            //System.out.println("             Počet nocí: " + bookings.getLengthStay());
-            System.out.println("     Rezervace na pokoj: " + "č." + bookings.getNumberBookedRoom());
 
+
+ //           System.out.println("             Počet nocí: " + (int) ChronoUnit.DAYS.between
+ //                   (bookingsList.get(i, bookings.getBookedFrom()), bookingsList.get(i, bookings.getBookedUntil()));
+
+
+
+            System.out.println("     Rezervace na pokoj: " + "č." + bookings.getNumberBookedRoom());
+            i = i + 1;
         }
         // KONEC výstupu
 

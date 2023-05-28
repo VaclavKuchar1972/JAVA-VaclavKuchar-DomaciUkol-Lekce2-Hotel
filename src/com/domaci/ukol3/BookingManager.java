@@ -24,14 +24,15 @@ public class BookingManager {
 
 
     public BigDecimal getOrderPrice() {
-
-return orderPrice;}
+        return orderPrice;}
 
 
     //public static int getLengthStay() {
     //    return (int) ChronoUnit.DAYS.between(bookedFrom, bookedUntil);
     //}
-    //public void addAllLengtStay(List<Bookings> bookingsList) {this.bookingsList.add(lengthStay);}
+
+
+
 
     public void setOrderPrice(BigDecimal orderPrice) {this.orderPrice = orderPrice;}
     //public int getLengthStay() {return (int) ChronoUnit.DAYS.between(bookingsList.,Bookings.bookedUntil());;}

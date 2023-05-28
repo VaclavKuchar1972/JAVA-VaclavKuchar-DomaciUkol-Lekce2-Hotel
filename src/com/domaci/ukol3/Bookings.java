@@ -2,7 +2,6 @@ package com.domaci.ukol3;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
 
 public class Bookings {
     private String whoBooked;
@@ -21,8 +20,8 @@ public class Bookings {
     public void setNumberBookedRoom(int numberBookedRoom) {this.numberBookedRoom = numberBookedRoom;}
     public LocalDate getBookedFrom() {return bookedFrom;}
     public void setBookedFrom(LocalDate bookedFrom) {this.bookedFrom = bookedFrom;}
-    public LocalDate getRezrvovanoDo() {return bookedUntil;}
-    public void setRezrvovanoDo(LocalDate rezrvovanoDo) {this.bookedUntil = rezrvovanoDo;}
+    public LocalDate getBookedUntil() {return bookedUntil;}
+    public void setBookedUntil(LocalDate rezrvovanoDo) {this.bookedUntil = rezrvovanoDo;}
     public boolean isWorkStay() {return workStay;}
     public void setWorkStay(boolean workStay) {this.workStay = workStay;}
     public boolean isCompanyBooking() {return companyBooking;}
