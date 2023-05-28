@@ -9,8 +9,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         // ZAČÁTEK Pomocných proměnných
-        int i = 0;
-        int j = 0;
+        int i = 0; int j = 0;
 
         int daysInMonth;
         int year = 2023;
@@ -71,6 +70,7 @@ public class Main {
         }
         bookingsList.add(new Bookings(agenciesList.get(0).getCompanyName(), LocalDate.of(2023, 8, 1 ),
                 LocalDate.of(2023, 8, 4), 2, false, true));
+        j = 0;
         for (i = 1; i < 4; i++) {
             j = i * 7;
             bookingsList.add(new Bookings(agenciesList.get(0).getCompanyName(), LocalDate.of(2023, 8, j ),
@@ -114,7 +114,7 @@ public class Main {
             }
             System.out.println("          Typ rezervace: " + bookings.getCompanyBooking());
             System.out.println("             Typ pobytu: " + bookings.getWorkStay());
-            System.out.println("       Rozsah rezervace: " + bookings.getRozsahRezervace());
+            System.out.println("       Rozsah rezervace: " + bookings.getBookingRange());
             System.out.println("     Rezervace na pokoj: " + "č." + bookings.getNumberBookedRoom());
 
         }
@@ -126,15 +126,12 @@ public class Main {
 
 
 
-
-
         // TADY JSEM MOC NEZVÁŽIL - KONZULTACE!!!!!!
-
         System.out.println("");
         System.out.println("STATISTIKA hotelu " + hotel1Name + " ke dni "
                 + LocalDate.now().format(DateTimeFormatter.ofPattern("d.M.yyyy")) + ":");
-        System.out.println("Celkový počet rezervací: " + bookingManager.bookingsList.size());
-        // System.out.println("  Celkový počet rezervací: " + bookingManager.bookingsList.size());
+        //System.out.println("Celkový počet rezervací: " + bookingManager.bookingsList.size());
+        System.out.println("Celkový počet rezervací: " + bookingManager.getNumberBookings());
 
 
 
