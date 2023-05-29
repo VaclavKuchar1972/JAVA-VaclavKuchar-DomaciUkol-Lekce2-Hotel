@@ -46,6 +46,7 @@ public class Bookings {
     public String getWorkStay() {if (workStay == true){return "PRACOVNÍ";} else {return "REKREAČNÍ";}}
     public String getCompanyBooking() {if (companyBooking == true){return "FIREMNÍ";} else {return "SOUKROMÁ";}}
 
-
+    //           System.out.println("             Počet nocí: " + (int) ChronoUnit.DAYS.between
+    //                   (bookingsList.get(i, bookings.getBookedFrom()), bookingsList.get(i, bookings.getBookedUntil()));
 
 }

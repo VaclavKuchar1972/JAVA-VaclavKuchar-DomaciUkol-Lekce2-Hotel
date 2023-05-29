@@ -3,7 +3,6 @@ import com.domaci.ukol3.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.YearMonth;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,6 +42,7 @@ public class Main {
         guestsList.add(new Guests("Jan", "Dvořáček", LocalDate.of(1995, 5, 5)));
         guestsList.add(new Guests("Karel", "Dvořák", LocalDate.of(1972, 6, 1)));
         guestsList.add(new Guests("Alena", "Krásová", LocalDate.of(1977, 10, 23)));
+        guestsList.add(new Guests("Alena", "Krásová", LocalDate.of(1986, 11, 1)));
         // Konec Dat HOSTÉ
         // Data FIREMNÍCH KLIENTŮ
         List<TravelAgencies> agenciesList = new ArrayList<>();
@@ -79,7 +79,8 @@ public class Main {
             bookingsList.add(new Bookings(agenciesList.get(0).getCompanyName(), LocalDate.of(2023, 8, j ),
                     LocalDate.of(2023, 8, j + 3), 2, false, true));
         }
-
+        bookingsList.add(new Bookings(guestsList.get(4).getNameFull(), LocalDate.of(2023, 12, 25),
+                LocalDate.of(2024, 12, 1), 2, true, false));
 
         // Konec Dat REZERVACE
         // KONEC načtení dat, který by se podle mě měli načítat z nějaký databáze
@@ -98,7 +99,7 @@ public class Main {
         System.out.println("SEZNAM SOUKROMÝCH HOSTŮ hotelu " + hotel1Name + ":");
         for (Guests guests : guestsList) {
             System.out.println("   " + guests.getNameFull());
-            System.out.println("         Datum narození: " + guests.getDateBirth());
+            System.out.println("         Datum narození: " + guests.getDateBirth(i));
         }
         System.out.println("");
         System.out.println("SEZNAM FIREMNÍCH KLIENTŮ hotelu " + hotel1Name + ":");
@@ -109,25 +110,24 @@ public class Main {
         System.out.println("");
         System.out.println("SEZNAM REZERVACÍ hotelu " + hotel1Name + " ke dni "
                 + LocalDate.now().format(DateTimeFormatter.ofPattern("d.M.yyyy")) + ":");
-        i=0;
+        j=0;
         for (Bookings bookings : bookingsList) {
             if (bookings.isCompanyBooking() == false) {
                 System.out.println("          Jméno hosta/ů: " + bookings.getWhoBooked());
+
+                System.out.println("          Datum narození: " + guestsList.get(j).getDateBirth(2));
+
             } else {
                 System.out.println("            Jméno firmy: " + bookings.getWhoBooked());
             }
             System.out.println("          Typ rezervace: " + bookings.getCompanyBooking());
             System.out.println("             Typ pobytu: " + bookings.getWorkStay());
             System.out.println("       Rozsah rezervace: " + bookings.getBookingRange());
-
-
- //           System.out.println("             Počet nocí: " + (int) ChronoUnit.DAYS.between
- //                   (bookingsList.get(i, bookings.getBookedFrom()), bookingsList.get(i, bookings.getBookedUntil()));
-
-
-
             System.out.println("     Rezervace na pokoj: " + "č." + bookings.getNumberBookedRoom());
-            i = i + 1;
+
+            //           System.out.println("             Počet nocí: " + (int) ChronoUnit.DAYS.between
+            //                   (bookingsList.get(i, bookings.getBookedFrom()), bookingsList.get(i, bookings.getBookedUntil()));
+            j = j + 1;
         }
         // KONEC výstupu
 
@@ -144,7 +144,7 @@ public class Main {
         //System.out.println("Celkový počet rezervací: " + bookingManager.bookingsList.size());
         System.out.println("Celkový počet rezervací: " + bookingManager.getNumberBookings());
 
-
+        // System.out.println(bookingsList.get(0);
 
 
 

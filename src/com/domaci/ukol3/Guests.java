@@ -21,6 +21,6 @@ public class Guests {
         this.dateBirth = dateBirth;
     }
     public String getNameFull() {return nameFirst + " " + nameSecond;}
-    public String getDateBirth() {return dateBirth.format(DateTimeFormatter.ofPattern("d.M.yyyy"));}
+    public String getDateBirth(int i) {return dateBirth.format(DateTimeFormatter.ofPattern("d.M.yyyy"));}
 
 }
