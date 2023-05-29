@@ -110,6 +110,10 @@ public class Main {
         System.out.println("");
         System.out.println("SEZNAM REZERVACÍ hotelu " + hotel1Name + " ke dni "
                 + LocalDate.now().format(DateTimeFormatter.ofPattern("d.M.yyyy")) + ":");
+
+
+        i=
+
         j=0;
         for (Bookings bookings : bookingsList) {
             if (bookings.isCompanyBooking() == false) {
