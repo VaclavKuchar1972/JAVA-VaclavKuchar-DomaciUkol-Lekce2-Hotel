@@ -115,7 +115,7 @@ public class Main {
             if (bookings.isCompanyBooking() == false) {
                 System.out.println("          Jméno hosta/ů: " + bookings.getWhoBooked());
 
-                System.out.println("          Datum narození: " + guestsList.get(j).getDateBirth(2));
+                // System.out.println("          Datum narození: " + guestsList.get(j).getDateBirth(2));
 
             } else {
                 System.out.println("            Jméno firmy: " + bookings.getWhoBooked());
