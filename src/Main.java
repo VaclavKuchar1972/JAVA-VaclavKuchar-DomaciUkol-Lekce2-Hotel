@@ -11,7 +11,7 @@ public class Main {
         // ZAČÁTEK Pomocných proměnných
         int i = 0; int j = 0;
 
-        // REINSTALACE ZKOUŠKA
+        // REINSTALACE ZKOUŠKA hhhhhhh
 
         int daysInMonth;
         int year = 2023;
